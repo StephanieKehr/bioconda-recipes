@@ -10,7 +10,7 @@ export CPATH=${PREFIX}/include
 
 # This edit needed for a successful DWGSIM build.
 # https://bioconda.github.io/troubleshooting.html#zlib-errors
-sed "/^CFLAGS=/ s|#.*$|-I${PREFIX}\/include|" Makefile > NewMakefile
+sed "/^CFLAGS=/ s|#.*$|-L${PREFIX}\/include|" Makefile > NewMakefile
 mv NewMakefile Makefile
 
 make LIBCURSES=-lncurses
